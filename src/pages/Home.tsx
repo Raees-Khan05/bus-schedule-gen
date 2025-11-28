@@ -54,7 +54,7 @@ const Home: React.FC<HomeProps> = ({ onStart }) => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 pt-8 md:pt-12"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 pt-8 md:pt-12 pb-10 pt-1"
                 >
                     <FeatureCard
                         icon={<Calendar className="w-6 h-6 text-primary" />}
@@ -67,7 +67,7 @@ const Home: React.FC<HomeProps> = ({ onStart }) => {
                         description="Download crystal clear PNGs ready for social media."
                     />
                     <FeatureCard
-                        icon={<Share2 className="w-6 h-6 text-accent" />}
+                        icon={<Share2 className="w-6 h-6 text-accent " />}
                         title="Instant Share"
                         description="One-click sharing to your favorite platforms."
                     />
@@ -75,7 +75,7 @@ const Home: React.FC<HomeProps> = ({ onStart }) => {
             </div>
 
             <footer className="absolute bottom-6 text-gray-500 text-sm z-20">
-                Build with love by Raees Awan
+                Build with ❤️ by Raees Awan
             </footer>
         </div>
     );

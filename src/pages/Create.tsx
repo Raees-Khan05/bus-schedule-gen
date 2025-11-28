@@ -67,17 +67,17 @@ const Create: React.FC<CreateProps> = ({ onBack }) => {
     }, [data]);
 
     return (
-        <div className="min-h-screen p-4 md:p-8 flex flex-col md:flex-row gap-8 max-w-[1600px] mx-auto">
+        <div className="min-h-screen p-2 sm:p-4 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 max-w-[1600px] mx-auto">
             {/* Left Panel: Controls */}
-            <div className="w-full md:w-1/3 space-y-6 overflow-y-auto h-[calc(100vh-4rem)] custom-scrollbar pb-20">
-                <div className="flex items-center gap-4 mb-6">
+            <div className="w-full md:w-1/3 space-y-4 md:space-y-6 overflow-y-auto md:h-[calc(100vh-4rem)] custom-scrollbar pb-4 md:pb-20">
+                <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                     <button onClick={onBack} className="p-2 rounded-full hover:bg-white/10 transition-colors">
                         <ArrowLeft className="w-6 h-6" />
                     </button>
-                    <h2 className="text-2xl font-bold">Edit Schedule</h2>
+                    <h2 className="text-xl md:text-2xl font-bold">Edit Schedule</h2>
                 </div>
 
-                <GlassCard className="space-y-4">
+                <GlassCard className="space-y-3 md:space-y-4">
                     <h3 className="text-lg font-semibold text-primary">Company Details</h3>
                     <Input
                         label="Company Name"
@@ -93,9 +93,9 @@ const Create: React.FC<CreateProps> = ({ onBack }) => {
                     />
                 </GlassCard>
 
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                     <div className="flex justify-between items-center">
-                        <h3 className="text-lg font-semibold text-primary">Buses ({data.buses.length})</h3>
+                        <h3 className="text-base md:text-lg font-semibold text-primary">Buses ({data.buses.length})</h3>
                         <NeonButton size="sm" onClick={addBus} variant="secondary">
                             <Plus className="w-4 h-4 mr-1" /> Add Bus
                         </NeonButton>
@@ -156,26 +156,28 @@ const Create: React.FC<CreateProps> = ({ onBack }) => {
 
             {/* Right Panel: Preview */}
             <div className="w-full md:w-2/3 flex flex-col items-center">
-                <div className="sticky top-4 z-50 w-full flex justify-end gap-3 mb-4 bg-slate-900/80 backdrop-blur-md p-4 rounded-xl border border-white/10">
+                <div className="sticky top-2 md:top-4 z-50 w-full flex flex-col sm:flex-row justify-end gap-2 md:gap-3 mb-3 md:mb-4 bg-slate-900/80 backdrop-blur-md p-2 md:p-4 rounded-xl border border-white/10">
                     <NeonButton
+                        size="sm"
                         variant="outline"
                         onClick={() => downloadImage('jpeg')}
                         disabled={isGenerating}
                     >
-                        {isGenerating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4 mr-2" />}
-                        JPG
+                        {isGenerating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4 md:mr-2" />}
+                        <span className="hidden sm:inline">JPG</span>
                     </NeonButton>
                     <NeonButton
+                        size="sm"
                         onClick={() => downloadImage('png')}
                         disabled={isGenerating}
                     >
-                        {isGenerating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4 mr-2" />}
-                        Download HD PNG
+                        {isGenerating ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4 md:mr-2" />}
+                        <span className="hidden sm:inline">Download HD </span>PNG
                     </NeonButton>
                 </div>
 
-                <div className="overflow-hidden w-full flex justify-center bg-black/20 p-2 md:p-8 rounded-2xl border border-white/5 shadow-inner min-h-[400px] md:min-h-[800px] relative">
-                    <div className="absolute top-4 md:top-8 origin-top scale-[0.3] sm:scale-[0.45] md:scale-[0.6] lg:scale-[0.7] xl:scale-[0.85] 2xl:scale-100 transition-transform duration-500">
+                <div className="overflow-hidden w-full flex justify-center bg-black/20 p-1 sm:p-2 md:p-8 rounded-2xl border border-white/5 shadow-inner min-h-[300px] sm:min-h-[400px] md:min-h-[800px] relative">
+                    <div className="absolute top-2 sm:top-4 md:top-8 origin-top scale-[0.25] sm:scale-[0.45] md:scale-[0.6] lg:scale-[0.7] xl:scale-[0.85] 2xl:scale-100 transition-transform duration-500">
                         <SchedulePreview ref={previewRef} data={data} />
                     </div>
                 </div>
