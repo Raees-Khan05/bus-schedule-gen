@@ -10,14 +10,14 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ onStart }) => {
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
+        <div className="min-h-screen flex flex-col items-center justify-center p-4 md:p-6 relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]" />
                 <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/20 rounded-full blur-[120px]" />
             </div>
 
-            <div className="max-w-4xl w-full space-y-12 text-center z-10">
+            <div className="max-w-4xl w-full space-y-8 md:space-y-12 text-center z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -29,9 +29,9 @@ const Home: React.FC<HomeProps> = ({ onStart }) => {
                         <span className="text-xl font-bold tracking-wide">BUS SCHEDULE PRO</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl font-display font-bold leading-tight">
+                    <h1 className="text-4xl md:text-7xl font-display font-bold leading-tight">
                         Create <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary text-glow">VIP Schedules</span>
-                        <br /> in Seconds
+                        <br className="hidden md:block" /> in Seconds
                     </h1>
 
                     <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
@@ -54,7 +54,7 @@ const Home: React.FC<HomeProps> = ({ onStart }) => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 pt-8 md:pt-12"
                 >
                     <FeatureCard
                         icon={<Calendar className="w-6 h-6 text-primary" />}

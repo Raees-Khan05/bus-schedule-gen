@@ -22,9 +22,9 @@ export function NeonButton({
 }: NeonButtonProps) {
 
     const variants = {
-        primary: "bg-primary text-black font-bold hover:shadow-neon-blue hover:bg-cyan-400 border-transparent",
-        secondary: "bg-secondary text-white font-bold hover:shadow-neon-purple hover:bg-violet-400 border-transparent",
-        outline: "bg-transparent border-white/20 text-white hover:bg-white/10 hover:border-white/40"
+        primary: "bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:shadow-neon-blue hover:scale-105 border-none",
+        secondary: "bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-bold hover:shadow-neon-purple hover:scale-105 border-none",
+        outline: "bg-transparent border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40"
     };
 
     const sizes = {
